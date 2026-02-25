@@ -1,0 +1,156 @@
+DBMS PROJECT
+Hospital Management System
+
+Submitted To : Mr. Atul Singh
+Date : 24-02-2026
+Submitted By :Ankita Sinha(2410030686)
+Ankit Kumar(2410030756)
+Anushree Singh(2410030581)
+Apoorva Gupta(2410030800)
+
+INTRODUCTION
+
+The Hospital Management System is a database management system designed to
+store and manage information related to hospital operations. It helps in maintaining
+records of patients, doctors, appointments, wards and medicines efficiently.
+This system ensures proper tracking of patient details, doctors, consultations, ward
+admissions, and prescribed medicines. It reduces manual work and improves
+accuracy, consistency, and security of data.
+The system uses relational database and an Entity Relationship (ER) model to design
+and organize the database
+
+Objective of the Project
+• To store patient information
+• To maintain doctor details
+• To manage appointment records
+• To store ward admission details
+• To maintain medicine records
+• To maintain relationships between all entities
+
+Entity Description
+1. Patient Entity
+This stores the information about the patient.
+Attributes:
+• patient_id (Primary Key)
+• patient_name
+• age
+• gender
+• contact_number
+
+2. Doctor Entity
+This entity stores the information about doctors.
+Attributes:
+• doctor_id (Primary Key)
+• doctor_name
+• specialization
+• experience
+• contact_number
+
+3. Appointment Entity
+This stores the information about the appointment between the patient and
+doctor.
+Attributes:
+• appointment_id (Primary Key)
+
+• appointment_date
+• status
+Foreign Keys:
+• patient_id
+• doctor_id
+
+4. Ward Entity
+This stores the information about ward in which patient is alloted to go.
+Attributes:
+• ward_id (Primary Key)
+• ward_name
+• ward_type
+• capacity
+Foreign Key:
+• patient_id
+
+5. Medicine Entity
+This stores the information of medicines which are prescribed by the doctor
+to patient,
+Attributes:
+• medicine_id (Primary Key)
+• medicine_name
+• dosage
+• price
+Foreign Key:
+• patient_id
+
+Relationship Description
+
+1. Patient BOOKS Appointment
+Relationship: One-to-Many
+One patient can book many appointments and each appointment can
+belong to only one patient.
+Participation:
+- Appointment : Total participation
+- Patient : Partial participation
+
+2. Patient CONSULTED_BY Doctor
+Relationship: Many-to-Many
+One patient can be consulted by many doctors and one doctor can consult
+many patients.
+Participation:
+- Doctor : Partial participation
+- Patient : Total participation
+
+3. Patient ASSIGNED_TO Ward
+Relationship: Many-to-One
+One ward can have many patients and one patient is assigned to only one
+ward at a time.
+
+Participation:
+- Patient : Total participation
+- Ward : Partial participation
+
+4. Doctor PRESCRIBES Medicine
+Relationship: Many-to-Many
+One doctor can prescribe many medicines and one medicine can be
+prescribed to many doctors.
+-Doctor : Partial participation
+-Medicine : Partial participation
+
+5. Patient PURCHASES Medicine
+Relationship: Many-to-Many
+One patient can take many medicines, also one medicine can be
+purchased by many patients.
+-Patient : Total participation
+-Medicine : Partial participation
+
+Relational Schema
+1. Patient (patient_id, patient_name, age, gender, contact_number)
+2.Doctor (doctor_id, doctor_name, specialization, experience,
+contact_number)
+3. Appointment (appointment_id, appointment_date, status, patient_id,
+doctor_id)
+4. Ward (ward_id, ward_name, ward_type, capacity, patient_id)
+5. Medicine (medicine_id, medicine_name, dosage, price, patient_id)
+
+Primary keys and Foreign keys
+
+Primary Key :
+• patient_id
+• doctor_id
+• appointment_id
+• ward_id
+• medicine_id
+
+Foreign Key:
+• appointment.patient_id → patient.patient_id
+• appointment.doctor_id → doctor.doctor_id
+
+• ward.patient_id → patient.patient_id
+• medicine.patient_id → patient.patient_id
+
+CONCLUSION
+
+The Hospital Management System provides an efficient way to manage
+hospital data. It maintains patient records, doctor information,
+appointments, ward details, and medicines.
+This system improves efficiency, reduces errors, and ensures proper data
+management.
+
+
